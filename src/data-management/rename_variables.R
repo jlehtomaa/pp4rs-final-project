@@ -30,25 +30,18 @@ if (is.null(opt$data)){
 print("Loading data")
 rawdata_long <- read_csv(opt$data)
 
-
-
-# IMPORT DATA
-#rawdata_long <- read_csv("raw_data.csv")
-#codes_raw <- read_csv("continent_codes.csv")
-
 # CLEAN DATA
-rawdata_wide <- rawdata_long %>% 
+rawdata_wide <- rawdata_long %>%
   spread(key = "VariableCode",
          value = "AggValue")
 
-rawdata_renamed <- rawdata_wide %>% 
-  rename(country = RegionCode, 
-         year = YearCode, 
-         population = pop, 
+rawdata_renamed <- rawdata_wide %>%
+  rename(country = RegionCode,
+         year = YearCode,
+         population = pop,
          real_gdp = rgdpo)
 
 
 # Save data
 print("saving output")
 write_csv(rawdata_renamed, opt$out)
-
