@@ -1,6 +1,6 @@
 ## Snakefile - pp4rs final project
 ##
-## @jlehtomaa ##
+## @jlehtomaa
 
 LOG_ALL = "2>&1"
 
@@ -21,15 +21,6 @@ rule all:
                     iFigure = FIGURES),
         paper = config["out_paper"] + "final_paper.pdf"
 
-# --- Clean rules --- #
-# rule clean_output:
-#     shell:
-#         "rm -rf out/ *.pdf *.rds *.png *.tex"
-#
-# rule clean_log:
-#     shell:
-#         "rm -rf log/"
-
 # --- Build rules --- #
 rule compile_paper:
     input:
@@ -44,14 +35,6 @@ rule compile_paper:
             --latex-engine=xelatex -o {output} \
             --bibliography {input.references} > {log} {LOG_ALL}"
 
-# rule make_tables:
-#     input:
-#         script = config["src_tables"] + "{iTable}.R",
-#         data = config[]
-#     output:
-#     log:
-#     shell:
-
 rule results_table:
     input:
         script = config["src_tables"] + "model_results.R",
@@ -63,7 +46,7 @@ rule results_table:
     shell:
         "Rscript {input.script} \
             --data {input.data} \
-            --out {output.tex}"
+            --out {output.tex} > {log} {LOG_ALL}"
 
 rule summary_stat_table:
     input:
@@ -76,7 +59,7 @@ rule summary_stat_table:
     shell:
         "Rscript {input.script} \
             --data {input.data} \
-            --out {output.tex}"
+            --out {output.tex} > {log} {LOG_ALL}"
 
 rule make_figures:
     input:
