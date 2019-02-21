@@ -12,8 +12,7 @@ TABLES  = glob_wildcards(config["src_tables"] + "{iTable}.R").iTable
 FIGURES = glob_wildcards(config["src_figures"] + "{iFigure}.R").iFigure
 print(FIGURES)
 
-# --- Build rules --- #
-
+# --- Main Build Rules --- #
 rule all:
     input:
         tables = expand(config["out_tables"] + "{iTable}.tex",
@@ -22,7 +21,16 @@ rule all:
                     iFigure = FIGURES),
         paper = config["out_paper"] + "final_paper.pdf"
 
+# --- Clean rules --- #
+# rule clean_output:
+#     shell:
+#         "rm -rf out/ *.pdf *.rds *.png *.tex"
+#
+# rule clean_log:
+#     shell:
+#         "rm -rf log/"
 
+# --- Build rules --- #
 rule compile_paper:
     input:
         manuscript = config["src_paper"] + "final_paper.md",
@@ -36,7 +44,6 @@ rule compile_paper:
             --latex-engine=xelatex -o {output} \
             --bibliography {input.references} > {log} {LOG_ALL}"
 
-
 # rule make_tables:
 #     input:
 #         script = config["src_tables"] + "{iTable}.R",
@@ -44,9 +51,6 @@ rule compile_paper:
 #     output:
 #     log:
 #     shell:
-
-
-
 
 rule results_table:
     input:
