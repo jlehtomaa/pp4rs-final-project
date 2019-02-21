@@ -1,5 +1,6 @@
 *.csv
 *.log
 *.pdf
-logs/*
 *.tex
+logs/*
+.snakemake/*
