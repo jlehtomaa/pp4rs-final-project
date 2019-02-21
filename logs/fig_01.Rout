@@ -1,0 +1,19 @@
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+[1] "Loading data"
+Parsed with column specification:
+cols(
+  country = col_character(),
+  continent = col_character(),
+  ln_pop = col_double(),
+  avg_pc_gdp_growth = col_double()
+)

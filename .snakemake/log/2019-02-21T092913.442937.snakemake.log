@@ -1,0 +1,30 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	compile_paper
+	1
+
+[Thu Feb 21 09:29:13 2019]
+rule compile_paper:
+    input: src/paper/final_paper.md
+    output: out/paper/short_paper.pdf
+    log: logs/final_paper.log
+    jobid: 0
+
+[Thu Feb 21 09:29:17 2019]
+Error in rule compile_paper:
+    jobid: 0
+    output: out/paper/short_paper.pdf
+    log: logs/final_paper.log
+
+RuleException:
+CalledProcessError in line 33 of /Users/jerelehtomaa/Dropbox/courses/uzh/pp4rs/final-project/Snakefile:
+Command ' set -euo pipefail;  pandoc src/paper/final_paper.md             --latex-engine=xelatex -o out/paper/short_paper.pdf > logs/final_paper.log 2>&1 ' returned non-zero exit status 43.
+  File "/Users/jerelehtomaa/Dropbox/courses/uzh/pp4rs/final-project/Snakefile", line 33, in __rule_compile_paper
+  File "/anaconda3/lib/python3.6/concurrent/futures/thread.py", line 56, in run
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /Users/jerelehtomaa/Dropbox/courses/uzh/pp4rs/final-project/.snakemake/log/2019-02-21T092913.442937.snakemake.log

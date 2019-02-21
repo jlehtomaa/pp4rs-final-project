@@ -1,0 +1,3 @@
+NameError in line 11 of /Users/jerelehtomaa/Dropbox/courses/uzh/pp4rs/final-project/Snakefile:
+name 'tables' is not defined
+  File "/Users/jerelehtomaa/Dropbox/courses/uzh/pp4rs/final-project/Snakefile", line 11, in <module>

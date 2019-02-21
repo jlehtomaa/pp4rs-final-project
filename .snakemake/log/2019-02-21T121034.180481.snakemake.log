@@ -1,0 +1,30 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	1	compile_paper
+	2
+
+[Thu Feb 21 12:10:34 2019]
+rule compile_paper:
+    input: src/paper/final_paper.md, src/paper/bibliography.bib
+    output: out/paper/final_paper.pdf
+    log: logs/final_paper.log
+    jobid: 4
+
+[Thu Feb 21 12:10:41 2019]
+Finished job 4.
+1 of 2 steps (50%) done
+
+[Thu Feb 21 12:10:41 2019]
+localrule all:
+    input: out/tables/model_results.tex, out/tables/summary_stat.tex, out/figures/fig_01.png, out/paper/final_paper.pdf
+    jobid: 0
+
+[Thu Feb 21 12:10:41 2019]
+Finished job 0.
+2 of 2 steps (100%) done
+Complete log: /Users/jerelehtomaa/Dropbox/courses/uzh/pp4rs/final-project/.snakemake/log/2019-02-21T121034.180481.snakemake.log

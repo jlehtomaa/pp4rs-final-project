@@ -1,0 +1,30 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	rename_vars
+	1
+
+[Tue Feb 19 22:20:27 2019]
+rule rename_vars:
+    input: src/data-management/rename_variables.R, src/data/raw_data.csv, src/data/continent_codes.csv
+    output: out/data/rawdata_renamed.csv
+    log: logs/rename_variables.Rout
+    jobid: 0
+
+[Tue Feb 19 22:20:29 2019]
+Error in rule rename_vars:
+    jobid: 0
+    output: out/data/rawdata_renamed.csv
+    log: logs/rename_variables.Rout
+
+RuleException:
+CalledProcessError in line 22 of /Users/jerelehtomaa/Dropbox/courses/uzh/pp4rs/final-project/Snakefile:
+Command ' set -euo pipefail;  Rscript src/data-management/rename_variables.R             --data src/data/raw_data.csv             --out out/data/rawdata_renamed.csv > logs/rename_variables.Rout 2>&1 ' returned non-zero exit status 1.
+  File "/Users/jerelehtomaa/Dropbox/courses/uzh/pp4rs/final-project/Snakefile", line 22, in __rule_rename_vars
+  File "/anaconda3/lib/python3.6/concurrent/futures/thread.py", line 56, in run
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /Users/jerelehtomaa/Dropbox/courses/uzh/pp4rs/final-project/.snakemake/log/2019-02-19T222027.725011.snakemake.log

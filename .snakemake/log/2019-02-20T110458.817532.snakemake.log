@@ -1,0 +1,30 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	table_01
+	1
+
+[Wed Feb 20 11:04:58 2019]
+rule table_01:
+    input: src/tables/table_01.R, out/analysis/regression_output.rds
+    output: out/tables/table_01.tex
+    log: logs/table_01.Rout
+    jobid: 0
+
+[Wed Feb 20 11:04:59 2019]
+Error in rule table_01:
+    jobid: 0
+    output: out/tables/table_01.tex
+    log: logs/table_01.Rout
+
+RuleException:
+CalledProcessError in line 21 of /Users/jerelehtomaa/Dropbox/courses/uzh/pp4rs/final-project/Snakefile:
+Command ' set -euo pipefail;  Rscript src/tables/table_01.R             --data out/analysis/regression_output.rds             --out out/tables/table_01.tex ' returned non-zero exit status 1.
+  File "/Users/jerelehtomaa/Dropbox/courses/uzh/pp4rs/final-project/Snakefile", line 21, in __rule_table_01
+  File "/anaconda3/lib/python3.6/concurrent/futures/thread.py", line 56, in run
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /Users/jerelehtomaa/Dropbox/courses/uzh/pp4rs/final-project/.snakemake/log/2019-02-20T110458.817532.snakemake.log

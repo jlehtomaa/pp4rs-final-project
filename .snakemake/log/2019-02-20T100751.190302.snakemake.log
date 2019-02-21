@@ -1,0 +1,30 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	make_vars
+	1
+
+[Wed Feb 20 10:07:51 2019]
+rule make_vars:
+    input: src/data-management/gen_reg_vars.R, out/data/rawdata_renamed.csv
+    output: out/data/data_complete.csv
+    log: logs/gen_reg_vars.Rout
+    jobid: 0
+
+[Wed Feb 20 10:07:53 2019]
+Error in rule make_vars:
+    jobid: 0
+    output: out/data/data_complete.csv
+    log: logs/gen_reg_vars.Rout
+
+RuleException:
+CalledProcessError in line 23 of /Users/jerelehtomaa/Dropbox/courses/uzh/pp4rs/final-project/Snakefile:
+Command ' set -euo pipefail;  Rscript src/data-management/gen_reg_vars.R             --data out/data/rawdata_renamed.csv             --out out/data/data_complete.csv > logs/gen_reg_vars.Rout 2>&1 ' returned non-zero exit status 1.
+  File "/Users/jerelehtomaa/Dropbox/courses/uzh/pp4rs/final-project/Snakefile", line 23, in __rule_make_vars
+  File "/anaconda3/lib/python3.6/concurrent/futures/thread.py", line 56, in run
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /Users/jerelehtomaa/Dropbox/courses/uzh/pp4rs/final-project/.snakemake/log/2019-02-20T100751.190302.snakemake.log

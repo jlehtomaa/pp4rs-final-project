@@ -1,0 +1,25 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	compile_paper
+	1
+
+[Wed Feb 20 12:22:57 2019]
+rule compile_paper:
+    input: src/paper/compile_paper.R, src/paper/final_paper.Rmd
+    output: out/paper/
+    log: logs/compile_paper.Rout
+    jobid: 0
+
+ImproperOutputException in line 12 of /Users/jerelehtomaa/Dropbox/courses/uzh/pp4rs/final-project/Snakefile:
+Outputs of incorrect type (directories when expecting files or vice versa). Output directories must be flagged with directory(). for rule compile_paper:
+out/paper/
+Removing output files of failed job compile_paper since they might be corrupted:
+out/paper/
+[Errno 66] Directory not empty: 'out/paper/'
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /Users/jerelehtomaa/Dropbox/courses/uzh/pp4rs/final-project/.snakemake/log/2019-02-20T122257.488542.snakemake.log

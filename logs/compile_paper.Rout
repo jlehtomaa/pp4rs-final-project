@@ -1,0 +1,21 @@
+[1] "Loading data"
+
+
+processing file: final_paper.Rmd
+  |                                                                         |                                                                 |   0%  |                                                                         |................................                                 |  50%
+  ordinary text without R code
+
+  |                                                                         |.................................................................| 100%
+label: unnamed-chunk-1 (with options) 
+List of 4
+ $ echo     : logi FALSE
+ $ fig.align: chr "center"
+ $ out.width: chr ".70\\linewidth"
+ $ fig.cap  : chr "Real GDP growth rate and log of 1970 population"
+
+
+output file: final_paper.knit.md
+
+/anaconda3/bin/pandoc +RTS -K512m -RTS final_paper.utf8.md --to latex --from markdown+autolink_bare_uris+ascii_identifiers+tex_math_single_backslash --output /Users/jerelehtomaa/Dropbox/courses/uzh/pp4rs/final-project/out/paper/final_paper.pdf --template /Users/jerelehtomaa/anaconda3/lib/R/library/rmarkdown/rmd/latex/default-1.17.0.2.tex --highlight-style tango --latex-engine pdflatex --variable graphics=yes --variable 'geometry:margin=1in' 
+
+Output created: out/paper/final_paper.pdf

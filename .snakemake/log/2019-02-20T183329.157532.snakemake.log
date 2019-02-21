@@ -1,0 +1,20 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	make_vars
+	1
+
+[Wed Feb 20 18:33:29 2019]
+rule make_vars:
+    input: src/data-management/gen_reg_vars.R, out/data/rawdata_renamed.csv, src/data/continent_codes.csv
+    output: out/data/data_complete.csv
+    log: logs/gen_reg_vars.Rout
+    jobid: 0
+
+[Wed Feb 20 18:33:30 2019]
+Finished job 0.
+1 of 1 steps (100%) done
+Complete log: /Users/jerelehtomaa/Dropbox/courses/uzh/pp4rs/final-project/.snakemake/log/2019-02-20T183329.157532.snakemake.log
