@@ -5,17 +5,21 @@ author: jlehtomaa
 
 # Introduction
 
-This is a course project work to create the first version of a snakemake workflow.
-The numbers illustrated here will check for a link between the population size and GDP growth rate, referred to as scale effects in endogenous growth theory.
-The workflow will use R to clean data and create a very simple regression and markdown + pandoc to draft a pdf version of the paper. Lorem ipsum. Blah blah.
+This is a course project work to create the first draft version of a reproducible research workflow using Snakemake.
+The numbers illustrated here will check for a link between the population size and GDP growth rate, which in endogenous growth theory is referred to as scale effects.
+The workflow will use R to clean data and create the simplest possible liner regression.
+A markdown manuscript will thenn be converted to pdf using Pandoc.
+Lorem ipsum. Blah blah blah. Blah blah.
 
 # Literature
-This bit will check that the BibTex integration works correctly.
-I will replicate the figure presented in @Laincz2006, but add some additional features such as grouping by continent.
+This chapter will check that the BibTex integration works correctly.
+I will replicate the figure presented on page 266 in @Laincz2006.
+I will also add some additional features, such as grouping and color coding by continent.
+Also the data I use will be slightly newer.
 
 # Data
 The dataset is taken from the Penn World Tables.
-Data include real GDP and population data for 156 countries for the period 1970-2010.
+After some cleaning, the dataset includes real GDP and population data for 121 countries for the period 1970-2010.
 
 The summary of the statistics looks as follows:
 \input{out/tables/summary_stat.tex}
@@ -23,7 +27,7 @@ The summary of the statistics looks as follows:
 
 # Results
 
-As expected, there seems only to be a very weak link between population size and real GDP growth.
+As expected, there seems to be only very weak positive link between population size and real GDP growth.
 The linear regression is presented in figure 1 below.
 
 ![Average real GDP growth for 1970 - 2010 and log of 1970 population](out/figures/fig_01.png)
