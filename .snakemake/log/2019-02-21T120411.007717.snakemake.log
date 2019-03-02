@@ -1,4 +1,0 @@
-Building DAG of jobs...
-WildcardError in line 15 of /Users/jerelehtomaa/Dropbox/courses/uzh/pp4rs/final-project/Snakefile:
-Wildcards in input files cannot be determined from output files:
-'iFigure'

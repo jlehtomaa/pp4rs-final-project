@@ -1,4 +1,0 @@
-Building DAG of jobs...
-MissingInputException in line 12 of /Users/jerelehtomaa/Dropbox/courses/uzh/pp4rs/final-project/Snakefile:
-Missing input files for rule make_figures:
-out/data/data_complete
