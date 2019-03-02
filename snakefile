@@ -2,6 +2,8 @@
 ##
 ## @jlehtomaa
 
+from pathlib import Path
+
 LOG_ALL = "2>&1"
 
 # --- Import a config file --- #
@@ -15,11 +17,15 @@ print(FIGURES)
 # --- Main Build Rules --- #
 rule all:
     input:
-        tables = expand(config["out_tables"] + "{iTable}.tex",
-                    iTable = TABLES),
-        figures = expand(config["out_figures"] + "{iFigure}.png",
-                    iFigure = FIGURES),
+#        tables = expand(config["out_tables"] + "{iTable}.tex",
+#                    iTable = TABLES),
+#        figures = expand(config["out_figures"] + "{iFigure}.png",
+#                    iFigure = FIGURES),
         paper = config["out_paper"] + "final_paper.pdf"
+    output:
+        paper = Path("pp4rs_assignment.pdf")
+    shell:
+        "rm -f Rplots.pdf && cp {input.paper} {output.paper}"
 
 # --- Build rules --- #
 rule compile_paper:
