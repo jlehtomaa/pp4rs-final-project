@@ -20,7 +20,7 @@ rule all:
     output:
         paper = Path("pp4rs_assignment.pdf")
     shell:
-        "rm -f Rplots.pdf && cp {input.paper} {output.paper}"
+        "cp {input.paper} {output.paper}"
 
 # --- Build rules --- #
 rule compile_paper:
