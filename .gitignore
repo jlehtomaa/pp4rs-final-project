@@ -3,4 +3,6 @@
 *.pdf
 *.tex
 logs/*
-.snakemake/*
+out/*
+.snakemake
+src/data/*

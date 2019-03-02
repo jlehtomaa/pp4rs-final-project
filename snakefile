@@ -12,15 +12,10 @@ configfile: "config.yaml"
 # --- Iterable lists --- #
 TABLES  = glob_wildcards(config["src_tables"] + "{iTable}.R").iTable
 FIGURES = glob_wildcards(config["src_figures"] + "{iFigure}.R").iFigure
-print(FIGURES)
 
 # --- Main Build Rules --- #
 rule all:
     input:
-#        tables = expand(config["out_tables"] + "{iTable}.tex",
-#                    iTable = TABLES),
-#        figures = expand(config["out_figures"] + "{iFigure}.png",
-#                    iFigure = FIGURES),
         paper = config["out_paper"] + "final_paper.pdf"
     output:
         paper = Path("pp4rs_assignment.pdf")
@@ -31,7 +26,13 @@ rule all:
 rule compile_paper:
     input:
         manuscript = config["src_paper"] + "final_paper.md",
-        references = config["src_paper"] + "bibliography.bib"
+        references = config["src_paper"] + "bibliography.bib",
+
+        tables = expand(config["out_tables"] + "{iTable}.tex",
+                    iTable = TABLES),
+        figures = expand(config["out_figures"] + "{iFigure}.png",
+                    iFigure = FIGURES),
+
     output:
         config["out_paper"] + "final_paper.pdf"
     log:
