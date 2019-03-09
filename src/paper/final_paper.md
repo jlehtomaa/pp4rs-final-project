@@ -8,7 +8,7 @@ author: jlehtomaa
 This is a course project work to create the first draft version of a reproducible research workflow using Snakemake.
 The numbers illustrated here will check for a link between the population size and GDP growth rate, which in endogenous growth theory is referred to as scale effects.
 The workflow will use R to clean data and create the simplest possible liner regression.
-A markdown manuscript will thenn be converted to pdf using Pandoc.
+A markdown manuscript will then be converted to pdf using Pandoc.
 Lorem ipsum. Blah blah blah. Blah blah.
 
 # Literature
